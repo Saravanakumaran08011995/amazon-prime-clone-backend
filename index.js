@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGO_URL)
 
 app.use(express.json())
 app.get("/", (req, res)=>{
-  res.send("Hello i'm working fine")
+  res.send("Hello i'm working")
 })
 app.get("/api", (req, res)=>{
   res.send("Hello i'm api")
