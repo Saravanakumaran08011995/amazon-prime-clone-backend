@@ -17,6 +17,12 @@ mongoose.connect(process.env.MONGO_URL)
 .catch(err => console.log(err))
 
 app.use(express.json())
+app.get("/", (req, res)=>{
+  res.send("Hello i'm working fine")
+})
+app.get("/api", (req, res)=>{
+  res.send("Hello i'm api")
+})
 app.use("/api/auth",authRoute)
 app.use("/api/users",userRoute) 
 app.use("/api/movies",movieRoute)
