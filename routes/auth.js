@@ -32,7 +32,7 @@ router.post("/login", async (req, res)=>{
 
         decrypted !== req.body.password && res.status(401).json("Invalid Credentials") 
 
-        const accessToken = jwt.sign({id: user.id, isAdmin: user.isAdmin}, process.env.SECRET_KEY, {expiresIn: "5d"})
+        const accessToken = jwt.sign({id: user.id, isAdmin: user.isAdmin}, process.env.SECRET_KEY, {expiresIn: "1h"})
         const { password, ...info } = user._doc
         
         res.status(200).json({...info, accessToken })
